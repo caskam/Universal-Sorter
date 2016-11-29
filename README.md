@@ -39,12 +39,12 @@ Examples:
   Alphabetical sort:
 
 ![Alt text](/Screenshots/text-before.png?raw=true "")
-![Alt text](/screenshots/text-after.png?raw=true "")
+![Alt text](/Screenshots/text-after.png?raw=true "")
 
   Numerical sort:
 
-![Alt text](/screenshots/numbers-before.png?raw=true "")
-![Alt text](/screenshots/numbers-after.png?raw=true "")
+![Alt text](/Screenshots/numbers-before.png?raw=true "")
+![Alt text](/Screenshots/numbers-after.png?raw=true "")
 
 OS specific issues:
 
