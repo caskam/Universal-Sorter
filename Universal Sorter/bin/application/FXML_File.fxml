@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1005.0" prefWidth="1002.0" style="-fx-background-color: lightgrey;" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
+   <children>
+      <Pane prefHeight="31.0" style="-fx-background-color: gray;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="31.0" prefWidth="1000.0" text="NUMERICAL AND ALPHABETICAL SORT" textAlignment="CENTER" textFill="WHITE" />
+            <MenuBar prefHeight="31.0" prefWidth="150.0" style="-fx-background-color: gray;" styleClass="application.css">
+              <menus>
+                <Menu mnemonicParsing="false" style="-fx-text-fill: white;" text="File">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#menuOpenFunc" text="Open File" />
+                        <MenuItem mnemonicParsing="false" onAction="#menuSaveAsFunc" text="Save As" />
+                        <MenuItem mnemonicParsing="false" onAction="#menuSaveFunc" text="Save" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+         </children>
+      </Pane>
+      <TextArea fx:id="textField" layoutX="12.0" layoutY="97.0" onKeyReleased="#fileBoolFunc" prefHeight="782.0" prefWidth="980.0" promptText="ENTER TEXT OR LOAD A FILE" wrapText="true" AnchorPane.bottomAnchor="126.0" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="42.0" />
+      <Pane fx:id="warningPane" disable="true" layoutX="283.0" layoutY="318.0" opacity="0.0" prefHeight="184.0" prefWidth="424.0" style="-fx-background-color: gray; -fx-border-color: lightgrey; -fx-border-width: 4;">
+         <children>
+            <Button fx:id="warningButton" disable="true" layoutX="152.0" layoutY="108.0" mnemonicParsing="false" onAction="#warningFunc" opacity="0.0" prefHeight="37.0" prefWidth="115.0" style="-fx-background-color: grey; -fx-border-color: lightgrey; -fx-border-width: 1.5;" text="OK" textFill="WHITE" />
+            <Label fx:id="warningLbl" alignment="CENTER" contentDisplay="CENTER" disable="true" layoutX="25.0" layoutY="32.0" opacity="0.0" prefHeight="56.0" prefWidth="373.0" text="NO SORTABLE CONTENT DETECTED" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="1.0" layoutY="885.0" prefHeight="115.0" prefWidth="1000.0" style="-fx-background-color: grey;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <Button fx:id="fileButton" layoutX="529.0" layoutY="67.0" mnemonicParsing="false" onAction="#fileFuncs" prefHeight="27.0" prefWidth="175.0" text="OPEN FILE" />
+            <ImageView fitHeight="86.0" fitWidth="103.0" layoutX="239.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@biglogo_small.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="clearButton" layoutX="529.0" layoutY="24.0" mnemonicParsing="false" onAction="#clearFunc" prefHeight="27.0" prefWidth="175.0" text="CLEAR" />
+            <Button fx:id="sortButton" layoutX="339.0" layoutY="67.0" mnemonicParsing="false" onAction="#sortFunc" prefHeight="27.0" prefWidth="175.0" text="SORT" />
+            <Button fx:id="orderButton" layoutX="339.0" layoutY="24.0" mnemonicParsing="false" onAction="#orderFunc" prefHeight="27.0" prefWidth="175.0" text="ASCENDING" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
