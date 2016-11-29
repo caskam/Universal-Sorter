@@ -54,11 +54,22 @@ public class Controller {
 	
 	@FXML
 	private Pane warningPane;
+	
+	@FXML
+	private TextField seperator;
 
 	String currentText = "";
 	Boolean ascending = true;
 	File currentFile;
 	boolean filePresent = false;
+	
+	public void maxField() {
+		seperator.textProperty().addListener(
+		        (observable,oldValue,newValue)-> {
+		            if(newValue.length() > 1) seperator.setText(oldValue);
+		        }
+		);
+	}
 
 	public void warningFunc() {
 		warningPane.setOpacity(0.0);
@@ -86,34 +97,11 @@ public class Controller {
 		}
 	}
 
-	static int[] countingSortInt(int[] numbers) {
-		int max = numbers[0];
-		for (int i = 1; i < numbers.length; i++) {
-			if (numbers[i] > max)
-				max = numbers[i];
-		}
-
-		int[] sortedNumbers = new int[max + 1];
-
-		for (int i = 0; i < numbers.length; i++) {
-			sortedNumbers[numbers[i]]++;
-		}
-
-		int insertPosition = 0;
-
-		for (int i = 0; i <= max; i++) {
-			for (int j = 0; j < sortedNumbers[i]; j++) {
-				numbers[insertPosition] = i;
-				insertPosition++;
-			}
-		}
-		return numbers;
-	}
-
 	public void sortFunc() {
 
 		String currentText = textField.getText().trim();
 		StringBuilder sb = new StringBuilder();
+		char sepValue = seperator.getText().charAt(0);
 
 		for (int i = 0; i < currentText.length(); i++) {
 			sb.append(currentText.charAt(i));
@@ -151,10 +139,10 @@ public class Controller {
 				StringBuilder sb2 = new StringBuilder();
 				
 				for (int i = 0; i < currentText.length(); i++) {
-					if (currentText.charAt(i) == ',') {
+					if (currentText.charAt(i) == sepValue) {
 						tempS = sb2.toString().trim();
 						if (!tempS.isEmpty()) {
-							if ((!tempS.matches("[0-9]+") || (!tempS.matches("[^a-zA-Z]")))) {
+							if (Pattern.matches(".*[a-zA-Z]+.*", tempS)) {
 								sortedText.add(tempS);
 							}
 						}
@@ -177,12 +165,16 @@ public class Controller {
 				}
 				
 				sb2.setLength(0);
-				sb2.append(sortedText.toString());
-				sb2.deleteCharAt(0);
+				for(int i = 0; i < sortedText.size(); i++) {
+					sb2.append(sortedText.get(i).toString().trim() + sepValue + " ");
+				}
 				sb2.deleteCharAt(sb2.length() - 1);
 				
 				if (sb2.charAt(0) == ',') {
 					sb2.deleteCharAt(0);
+				}
+				if (sb2.charAt(sb2.length()-1) == ',') {
+					sb2.deleteCharAt(sb2.length()-1);
 				}
 				if (sb2.charAt(0) == ' ') {
 					sb2.deleteCharAt(0);
@@ -199,7 +191,7 @@ public class Controller {
 				StringBuilder sb2 = new StringBuilder();
 				
 				for (int i = 0; i < currentText.length(); i++) {
-					if (currentText.charAt(i) == ',') {
+					if (currentText.charAt(i) == sepValue) {
 						tempS = sb2.toString().trim();
 						if (tempS.matches("^[0-9]\\d*(\\.\\d+)?$")) {
 							System.out.println("Added" + tempS);
@@ -230,12 +222,16 @@ public class Controller {
 				}
 				
 				sb2.setLength(0);
-				sb2.append(sortedNumbers.toString().trim());
-				sb2.deleteCharAt(0);
+				for(int i = 0; i < sortedNumbers.size(); i++) {
+					sb2.append(sortedNumbers.get(i).toString().trim() + sepValue + " ");
+				}
 				sb2.deleteCharAt(sb2.length() - 1);
 				
 				if (sb2.charAt(0) == ',') {
 					sb2.deleteCharAt(0);
+				}
+				if (sb2.charAt(sb2.length()-1) == ',') {
+					sb2.deleteCharAt(sb2.length()-1);
 				}
 				if (sb2.charAt(0) == ' ') {
 					sb2.deleteCharAt(0);
