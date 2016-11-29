@@ -11,7 +11,7 @@ Automatically identifies the nature of the content, and sorts it according to th
 Instructions: 
 
 1. Enter or load text/numbers from a plain text file (.txt) or a rich text file (.rtf). Or simply enter text/numbers into the  text area.
-2. Ensure that each element is seperated with a comma: ','.
+2. Ensure that each element is seperated with your specified seperator. The default is a comma: ','.
 3. Specify the order in which to sort the content, either ascending or descending.
 4. Press 'SORT' once to sort the elements.
 
