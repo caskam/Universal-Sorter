@@ -38,13 +38,13 @@ Examples:
 
   Alphabetical sort:
 
-![Alt text](/screenshots/manual.png?raw=true "text-before")
-![Alt text](/screenshots/manual.png?raw=true "text-after")
+![Alt text](/Screenshots/text-before.png?raw=true "")
+![Alt text](/screenshots/text-after.png?raw=true "")
 
   Numerical sort:
 
-![Alt text](/screenshots/manual.png?raw=true "numbers-before")
-![Alt text](/screenshots/manual.png?raw=true "numbers-after")
+![Alt text](/screenshots/numbers-before.png?raw=true "")
+![Alt text](/screenshots/numbers-after.png?raw=true "")
 
 OS specific issues:
 
